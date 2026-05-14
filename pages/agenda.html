@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare Planner | Agenda de Cuidados</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">🐾 PetCare Planner</div>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./agenda.html">Agenda</a></li>
+                <li><a href="./perfil.html">Mis Mascotas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h1>Agendar Nuevo Cuidado</h1>
+            <form id="form-tarea">
+                <div class="form-group">
+                    <label for="seleccionar-mascota">Mascota</label>
+                    <select id="seleccionar-mascota" required>
+                        <option value="" disabled selected>Seleccioná una mascota</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-cuidado">Tipo de Cuidado</label>
+                    <select id="tipo-cuidado" required>
+                        <option value="alimentacion">Alimentación</option>
+                        <option value="paseo">Paseo</option>
+                        <option value="vacuna">Vacuna / Vet</option>
+                        <option value="higiene">Baño / Higiene</option>
+                        <option value="medicamento">Medicamento</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha-tarea">Fecha y Hora</label>
+                    <input type="datetime-local" id="fecha-tarea" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="notas-tarea">Notas adicionales (Opcional)</label>
+                    <textarea id="notas-tarea" placeholder="Ej: Ayunas de 8hs, llevar carnet..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Agendar Tarea</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>Próximas Tareas</h2>
+            
+            <div class="filtros-container">
+                <button class="btn-filtro active" data-filtro="todas">Todas</button>
+                <button class="btn-filtro" data-filtro="hoy">Hoy</button>
+                <button class="btn-filtro" data-filtro="vencidas">Vencidas</button>
+                <button class="btn-filtro" data-filtro="futuras">Futuras</button>
+            </div>
+
+            <div id="agenda-container" class="grid-container">
+                <p class="empty-state">No hay tareas agendadas.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PetCare Planner</p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
